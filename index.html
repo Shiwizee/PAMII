@@ -7,8 +7,10 @@
   </head>
   <body>
     <ion-app>
-      <ion-router id="main-router" use-hash="true">
+      <ion-router id="main-router" use-hash="false">
+        <ion-route-redirect from="/" to="/login"></ion-route-redirect>
         <ion-route url="/login" component="login-page"></ion-route>
+        <ion-route url="/home" component="home-page"></ion-route>
       </ion-router>
       <ion-nav id="main-nav"></ion-nav>
     </ion-app>
