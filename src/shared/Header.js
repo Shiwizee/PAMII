@@ -21,8 +21,8 @@ const createAndInjectionMenu = () => {
                 <ion-item button class="menu-item" data-url="/home">
                     <ion-label>Home</ion-label>
                 </ion-item>
-                <ion-item button class="menu-item" data-url="/produtos/list">
-                    <ion-label>Produtos</ion-label>
+                <ion-item button class="menu-item" data-url="/produto/list">
+                    <ion-label>Produto</ion-label>
                 </ion-item>
                 <ion-item button class="menu-item" data-url="/usuario/list">
                     <ion-label>Usuário</ion-label>
@@ -53,17 +53,27 @@ export function createHeader(pageName){
     if (pageName !== 'Login') 
         createAndInjectionMenu();
 
+    const logout = pageName !== 'Login' ? 
+    `<ion-buttons slot="end">
+        <ion-button id="logout-btn" onclick="logout()">
+            <ion-icon name="log-out-outline" slot="icon-only">
+            </ion-icon>
+        </ion-button>
+    </ion-buttons>` : ""
+
     const start = pageName !== 'Login' ? 
     `<ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
     </ion-buttons>` :
-    '<ion-icon name="cafe" style="margin-left: 15px; font-size: 24px;" slot="start"></ion-icon>'
+    `<ion-icon name="cafe" style="margin-left: 15px; font-size: 24px;" slot="start">
+    </ion-icon>`
 
     return `
         <ion-header>
             <ion-toolbar color="primary">
                 ${start}
                 <ion-title>Quero Café Bar - ${pageName}</ion-title>
+                ${logout}
             </ion-toolbar>
         </ion-header>
     `;

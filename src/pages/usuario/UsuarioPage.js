@@ -1,5 +1,6 @@
 import './UsuarioPage.css'
 import { createHeader } from '../../shared/Header.js'
+import { logout } from '../../shared/util.js';
 
 const pageName = 'Usuário';
 
@@ -11,6 +12,7 @@ class UsuarioPage extends HTMLElement{
         this.innerHTML = `
             ${cabecalho}
         `;
+        this.querySelector('#logout-btn').addEventListener('click', logout);
     }
 }
 
