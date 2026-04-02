@@ -23,7 +23,7 @@ class EditUsuarioPage extends HTMLElement{
                             <ion-input type="password" value="********" name="senha" label="Senha" label-placement="floating" required></ion-input>
                         </ion-item>
                         <ion-item>
-                            <ion-input type="number" value="2" name="perfil" label="Perfil" label-placement="floating" required></ion-input>
+                            <ion-input type="number" value="1" name="perfil" label="Perfil" label-placement="floating" required></ion-input>
                         </ion-item>
                     </ion-list>
                     <div class="ion-padding">
