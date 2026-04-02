@@ -1,10 +1,9 @@
-import './EditProdutoPage.css'
+import './EditUsuarioPage.css'
 import { createHeader } from '../../shared/Header.js'
 import { logout } from '../../shared/util.js';
 
-const pageName = 'Editar Produto';
-
-class EditProdutoPage extends HTMLElement{
+const pageName = 'Editar Usuário';
+class EditUsuarioPage extends HTMLElement{
 
     connectedCallback() {
         const cabecalho = createHeader(pageName);
@@ -12,17 +11,19 @@ class EditProdutoPage extends HTMLElement{
         this.innerHTML = `
             ${cabecalho}
             <ion-content class="ion-padding">
-                <form id ="form-edit-produto">
+                <form id ="form-usuario">
                     <ion-list>
                         <ion-item>
-                            <ion-input type="text" value="Macarronada" name="dsc_produto" label="Descrição do Produto" label-placement="floating" required></ion-input>
+                            <ion-input type="text" value="João Silva" name="nome" label="Nome Completo" label-placement="floating" required></ion-input>
                         </ion-item>
                         <ion-item>
-                            <ion-input type="number" value="20.99" step="0.01" name="vlr_unit" label="Valor Unitário" label-placement="floating" required></ion-input>
+                            <ion-input type="text" value="joao.silva" name="usuario" label="Nome de Usuário" label-placement="floating" required></ion-input>
                         </ion-item>
                         <ion-item>
-                            <ion-label>Ativo</ion-label>
-                            <ion-toggle slot="end" name="status" checked></ion-toggle>
+                            <ion-input type="password" value="********" name="senha" label="Senha" label-placement="floating" required></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input type="number" value="2" name="perfil" label="Perfil" label-placement="floating" required></ion-input>
                         </ion-item>
                     </ion-list>
                     <div class="ion-padding">
@@ -33,8 +34,7 @@ class EditProdutoPage extends HTMLElement{
             </ion-content>
         `;
         this.querySelector('#logout-btn').addEventListener('click', logout);
-        this.querySelector('#btn-cancelar').addEventListener('click', () => window.history.back());
     }
 }
 
-customElements.define('edit-produto-page', EditProdutoPage);
+customElements.define('edit-usuario-page', EditUsuarioPage);

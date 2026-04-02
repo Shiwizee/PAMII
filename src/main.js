@@ -31,7 +31,10 @@ import { logout } from './shared/util.js';
 // PAGES
 import './pages/login/LoginPage.js';
 import './pages/home/HomePage.js';
-import './pages/usuario/UsuarioPage.js';
+import './pages/usuario/ListUsuarioPage.js';
+import './pages/usuario/CadUsuarioPage.js';
+import './pages/usuario/EditUsuarioPage.js';
 import './pages/produtos/ListProdutoPage.js';
 import './pages/produtos/CadProdutoPage.js';
 import './pages/produtos/EditProdutoPage.js';
+

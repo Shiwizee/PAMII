@@ -17,12 +17,12 @@ class ListProdutoPage extends HTMLElement{
         `;
         this.querySelector('#logout-btn').addEventListener('click', logout);
 
-        const produtos = JSON.parse(this.fetchProdutos());
+        const produtos = this.fetchProdutos() || [];
         this.renderProdutos(produtos);
     }
 
-    async fetchProdutos() {
-        return `{
+    fetchProdutos() {
+        return [
             {
                 "id": 1,
                 "dsc_produto": "Macarronada",
@@ -40,8 +40,8 @@ class ListProdutoPage extends HTMLElement{
                 "dsc_produto": "Strogonoff de Frango",
                 "vlr_unit": 22.99,
                 "status": 1
-            },
-        }`;
+            }
+        ]
     }
 
     renderProdutos(produtos) {
